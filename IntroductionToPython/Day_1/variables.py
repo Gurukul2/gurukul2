@@ -1,5 +1,14 @@
-i = 2
-s = "string"
-f = 3.0
+# 123total= "nokia"
+# total123="nokia"
+# java2share="nokia"
+# ca$h="nokia"
+# _abc_abc_="nokia"
+# Def="nokia"
+# if="nokia"
 
-print(f"Variable Type: {type(i)}, variable value: {i}" )
+
+# A = 10
+# print(A)
+#
+# import keyword
+# print(keyword.kwlist)
