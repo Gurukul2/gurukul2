@@ -17,7 +17,7 @@ print("complex_number:", complex_number, "| type:", type(complex_number))
 print('Real_Part:',complex_number.real,'Imaginary_Part:',complex_number.imag)
 
 
-Bool##
+# Bool##
 a = 10
 b = 20
 c = a < b
