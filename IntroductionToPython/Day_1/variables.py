@@ -1,6 +1,8 @@
 
 # # Global variable
 # x = 10
+# print("Memory address of x:", id(x))    #RAM
+
 # def my_function():
 #     # Local variable
 #     y = 5
