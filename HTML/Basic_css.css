@@ -1,0 +1,55 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e2fff3;
+    color: #333;
+}
+
+/* Styling the h1 tag */
+h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling the h2 tag */
+h2 {
+    color: #34495e;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for the paragraph */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Style for unordered list (ul) */
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    background-color: #3498db;
+    color: rgb(255, 210, 210);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Styling the h3 tag */
+h3 {
+    color: #015040;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
