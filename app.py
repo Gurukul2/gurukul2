@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, url_for, flash, request, jsonify
 from werkzeug.utils import secure_filename
-from forms import RegistrationForm
+from forms import RegistrationForm, LoginForm
 from config import Config
 
 
@@ -11,6 +11,8 @@ app.config.from_object(Config)  # Load configuration from Config
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+VALID_USERNAME = 'admin'
+VALID_PASSWORD = 'password123'
 
 @app.route('/')
 def home():
@@ -108,5 +110,26 @@ def success():
     }
     return render_template('FLAST_WTF_Session/success.html', user=user_data)
 
+valid_username = 'administrator'
+valid_passowrd = 'Welcome123'
+@app.route('/login_user', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+
+        # Validate Credentials
+
+        if username == valid_username and password == valid_passowrd:
+            flash('Login Successful', 'success')
+            return redirect(url_for('login'))
+        else:
+            flash('Invalid username or password', 'danger')
+    return render_template('login_form.html', form = form)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+credentials = [{'user1': 'xyz', 'pass':'nfeorg'}, {'user2': 'abc', 'pass': 'fewcdsf'}]

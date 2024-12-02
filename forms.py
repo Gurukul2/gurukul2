@@ -44,3 +44,11 @@ class RegistrationForm(FlaskForm):
     agree = BooleanField('I agree to the Terms and Conditions', validators=[DataRequired()])
 
     submit = SubmitField('Register')
+
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(message='Please enter your username'),
+                        Length(min=6, max=20, message="Username must be 6 to 20 characters")])
+    password = PasswordField('Password', validators=[DataRequired(message='Please enter your Password'),
+                        Length(min=6, message="Password must be greater than 6 characters")])
+    submit = SubmitField('Login')
