@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Registration Successful!</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+            <p class="card-text"><strong>Gender:</strong> 
+                {% if user.gender == 'M' %}
+                    Male
+                {% elif user.gender == 'F' %}
+                    Female
+                {% else %}
+                    Other
+                {% endif %}
+            </p>
+            <p class="card-text"><strong>Hobbies:</strong> {{ user.hobbies | join(', ') }}</p>
+            <p class="card-text"><strong>Country:</strong> 
+                {% if user.country == 'us' %}
+                    United States
+                {% elif user.country == 'ca' %}
+                    Canada
+                {% elif user.country == 'uk' %}
+                    United Kingdom
+                {% elif user.country == 'au' %}
+                    Australia
+                {% elif user.country == 'in' %}
+                    India
+                {% else %}
+                    Other
+                {% endif %}
+            </p>
+            <p class="card-text"><strong>Profile Picture:</strong></p>
+            <img src="{{ url_for('static', filename='uploads/' + user.profile_picture) }}" alt="Profile Picture" class="img-thumbnail" width="200">
+        </div>
+    </div>
+    <br>
+    <a href="{{ url_for('register') }}" class="btn btn-secondary">Register Another User</a>
+{% endblock %}
