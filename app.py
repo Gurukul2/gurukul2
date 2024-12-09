@@ -129,6 +129,23 @@ def login():
     return render_template('login_form.html', form = form)
 
 
+@app.route('/render_table', methods=['GET', 'POST'])
+def render_table():
+    from Python.table_data import table
+    table_data = table()
+    return render_template('table_data.html', table_data = table_data)
+
+
+@app.route('/filtered_data', methods=['GET'])
+def dataById():
+    selectedId = request.args.get('id').strip()
+    from Python.table_data import table
+    table_data = table()
+    filtered_data = [row for row in table_data if row['ID'] == int(selectedId)]
+    return jsonify(filtered_data)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

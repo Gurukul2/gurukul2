@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <input type="text" id="value" placeholder="Search by ID">
+        <button id="submit" class="btn btn-sm btn-info">Submit</button>
+    </div>
+    <div class="table-data">
+        <table class="w-100 table-striped table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th colspan="5">These are the details updated till 2024.</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+                <tbody id="table-tbody">
+                {% for row in table_data %}
+                    <tr>
+                        <td>{{ row['ID'] }}</td>
+                        <td>{{ row['Name'] }}</td>
+                        <td>{{ row['Age'] }}</td>
+                        <td>{{ row['Department'] }}</td>
+                        <td>{{ row['Salary'] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+        </table>
+    </div>
+    <script src="static/ajax_example.js" defer></script>
+{% endblock %}

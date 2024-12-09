@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Update</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<style>
+    .btn{
+        height:100px;
+        width:100px;
+        border-radius:50%;
+        box-shadow:5px 5px 10px gray;
+    }
+    .card{
+        margin:0px auto;
+    }
+</style>
+    <div class="card">
+        <div class="d-flex">
+            <div class="red" style="padding:10px;margin:10px">
+                <button class="btn btn-info" style="background-color:red">Red</button>
+            </div>
+            <div class="yellow" style="padding:10px;margin:10px">
+                <button class="btn btn-info" style="background-color:yellow;color:black;">Yellow</button>
+            </div>
+            <div class="green" style="padding:10px;margin:10px">
+                <button class="btn btn-info" style="background-color:green">Green</button>
+            </div>
+            <div class="blue" style="padding:10px;margin:10px">
+                <button class="btn btn-info" style="background-color:blue">Blue</button>
+            </div>
+        </div>
+    </div>
+    <div id="response"></div>
+<script>
+    $(document).ready(function(){
+        $(".btn").on('click', function(){
+         let $btn = $(this);
+         let parentDivClasses = $btn.closest('div').attr('class');
+         $btn.css('background-color', 'purple');
+         $("#response").empty().html(`You clicked ${parentDivClasses} button`);
+         setTimeout(function(){
+            $btn.css('background-color', parentDivClasses)
+         },2000)
+        })
+    })
+</script>
+
+</body>
+</html>
